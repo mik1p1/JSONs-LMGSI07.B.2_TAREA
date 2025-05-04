@@ -1,0 +1,9 @@
+{
+    "marca": "Lenovo",
+    "modelo": "ThinkPad X1 Carbon",
+    "precio": 1499.99,
+    "procesador": "Intel Core i7",
+    "so": "Windows 11 Pro",
+    "stock": true,
+    "conexiones": ["USB-C", "HDMI", "Bluetooth", "WiFi 6"]
+  }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario de Portátil</h2>
+
+    <form>
+      <label>Marca: <input type="text" id="marca"></label><br><br>
+      <label>Modelo: <input type="text" id="modelo"></label><br><br>
+      <label>Precio: <input type="text" id="precio"></label><br><br>
+      <label>Procesador: <input type="text" id="procesador"></label><br><br>
+      <label>Sistema Operativo: <input type="text" id="so"></label><br><br>
+      <label>
+        En stock:
+        <input type="checkbox" id="stock">
+      </label><br><br>
+      <label>Conexiones: <input type="text" id="conexiones"></label><br><br>
+    </form>
+  
+    <script>
+      fetch('portatil.json')
+        .then(response => response.json())
+        .then(portatil => {
+          document.getElementById("marca").value = portatil.marca;
+          document.getElementById("modelo").value = portatil.modelo;
+          document.getElementById("precio").value = portatil.precio;
+          document.getElementById("procesador").value = portatil.procesador;
+          document.getElementById("so").value = portatil.so;
+  
+          if (portatil.stock) {
+            document.getElementById("stock").setAttribute("checked", "checked");
+          }
+  
+          document.getElementById("conexiones").value = portatil.conexiones.join(", ");
+        });
+    </script>
+</body>
+</html>
